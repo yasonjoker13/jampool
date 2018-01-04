@@ -129,7 +129,7 @@
                                 </ul>
                             </li>
                             <li class="footer">
-                                <a href="javascript:void(0);">View All Notifications</a>
+                                <a href="javascript:void(0);">Ver Todas las Notificaciones</a>
                             </li>
                         </ul>
                     </li>

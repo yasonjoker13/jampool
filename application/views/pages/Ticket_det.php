@@ -108,7 +108,7 @@
                             </table>
 
                             <div class="align-center">
-                                <?= anchor('ventas/emitir/'.$ticket->numero, '<button type="button" class="btn bg-cyan waves-effect" data-type="success">Emitir</button>'); ?>
+                                <?php //echo anchor('ventas/emitir/'.$ticket->numero, '<button type="button" class="btn bg-cyan waves-effect" data-type="success">Emitir</button>'); ?>
                             </div>
                         </div>
                     </div>

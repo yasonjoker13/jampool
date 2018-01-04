@@ -12,6 +12,9 @@ $(function () {
         }
         else if (type === 'confirm') {
             showConfirmMessage();
+            $('.confirm').click(function(){
+                $('#reset-play').click();
+            });
         }
         else if (type === 'cancel') {
             showCancelMessage();
@@ -44,20 +47,20 @@ function showWithTitleMessage() {
 }
 
 function showSuccessMessage() {
-    swal("Good job!", "You clicked the button!", "success");
+    swal("Muy bien!", "Registro realizado con exito!", "success");
 }
 
 function showConfirmMessage() {
     swal({
-        title: "Are you sure?",
-        text: "You will not be able to recover this imaginary file!",
+        title: "Desea eliminar?",
+        text: "Perdera todo el contenido escrito!",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",
-        confirmButtonText: "Yes, delete it!",
+        confirmButtonText: "Si, eliminar todo!",
         closeOnConfirm: false
     }, function () {
-        swal("Deleted!", "Your imaginary file has been deleted.", "success");
+        swal("Eliminado!", "Todo el contenido ha sido borrado.", "success");
     });
 }
 

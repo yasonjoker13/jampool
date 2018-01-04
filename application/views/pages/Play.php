@@ -85,14 +85,25 @@
                                     </tfooter>
                                 </table>
 
-                            <div class="align-center js-sweetalert">
-                                <button type="submit" class="btn bg-cyan waves-effect" data-type="success">Emitir</button>
+                            <div class="align-center">
+                                <button type="submit" id="submit-play" class="btn bg-cyan waves-effect">Emitir</button>
                                 <button type="reset" class="btn bg-grey waves-effect reset" id="reset-ani" data-type="confirm">Eliminar</button>
+                                <div class="hidden js-sweetalert">
+                                    <button type="button" id="enviar-play" class="btn bg-cyan waves-effect" data-type="success">Enviar</button>
+                                    <button type="button" id="reset-play" class="btn bg-grey waves-effect">Borrar</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             
+            </div>
+
+            <div class="col-md-12 jsdemo-notification-button hidden">
+                <button id="btn-animal" type="button" data-placement-from="top" data-text="Seleccione algún Animalito" data-placement-align="right" data-animate-enter="animated zoomInRight" data-animate-exit="animated zoomOutRight" data-color-name="bg-teal">FALTA ANIMAL</button>
+                <button id="btn-hora" type="button" data-placement-from="top" data-text="Seleccione alguna Hora" data-placement-align="right" data-animate-enter="animated zoomInRight" data-animate-exit="animated zoomOutRight" data-color-name="bg-teal">FALTA HORA</button>
+                <button id="btn-falta" type="button" data-placement-from="top" data-text="Falta ingresar Costo a un Animalito" data-placement-align="right" data-animate-enter="animated zoomInRight" data-animate-exit="animated zoomOutRight" data-color-name="bg-teal">FALTA</button>
+                <button id="btn-cerrado" type="button" data-placement-from="top" data-text="Las ventas estan cerradas por hoy" data-placement-align="right" data-animate-enter="animated zoomInRight" data-animate-exit="animated zoomOutRight" data-color-name="bg-teal">CERRADO</button>
             </div>
         <?= form_close(); ?>
     </div>

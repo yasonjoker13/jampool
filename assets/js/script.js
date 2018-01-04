@@ -156,5 +156,45 @@ $(function(){
         }
 
     });
+
+    //reset-ani
+    $('#reset-play').click(function(){
+        $('.check-ani').removeClass('bg-teal');
+        $('.hora').removeAttr('checked');
+        $('.input-checkbox-animalito').removeAttr('checked');
+        $('.tr-animales').css('display','none');
+        $('.td-costo').text('');
+        $('#total').text('0');
+    });
+
+    //validacion
+    $('#submit-play').click(function(e){
+        animalitos = $('.input-checkbox-animalito:checked');
+        hora = $(".hora:checked");
+        cerrado = $('#hora_19').attr('disabled');
+        if(cerrado == 'disabled'){
+            e.preventDefault();
+            $('#btn-cerrado').click();
+        }else{
+            if(hora.length == 0){
+                e.preventDefault();
+                $('#btn-hora').click();
+            }
+            if(animalitos.length == 0){
+                e.preventDefault();
+                $('#btn-animal').click();
+            }
+            $('.td-costo').each(function(){
+                cantidad = $(this).text();
+                if(cantidad == '0'){
+                    e.preventDefault();
+                    $('#btn-falta').click();
+                    return false;
+                }else if(cantidad != ''){
+                    $('#enviar-play').click();
+                }
+            });
+        }
+    });
 	
 });

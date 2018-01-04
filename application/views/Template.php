@@ -1,0 +1,9 @@
+<?php
+	$this->load->view('template/header');
+	$this->load->view('template/sidebar');
+	$this->load->view('pages/'.$filename);
+	if(isset($footer_js)){
+		$this->load->view('template/js/'.$footer_js);
+	}else{
+		$this->load->view('template/footer');
+	}

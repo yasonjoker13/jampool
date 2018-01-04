@@ -66,11 +66,15 @@ class Ventas_model extends CI_Model
 
 	public function ticketGanados()
 	{
-		$this->db->where('status', '1');
+		$this->db->where('jugadas.status', '1');
+		$this->db->where_in('ticket.status', ['1', '3']);
 		if($this->rol() == 2){
-			$this->db->where('vendedor', $this->user());
+			$this->db->where('ticket.vendedor', $this->user());
 		}
-		$query = $this->db->get('ticket');
+		$this->db->select('*');
+		$this->db->from('ticket');
+		$this->db->join('jugadas', 'jugadas.numero_ticket = ticket.numero');
+		$query = $this->db->get();
 		return $query->result();
 	}
 

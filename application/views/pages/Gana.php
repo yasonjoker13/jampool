@@ -13,7 +13,7 @@
                     </div>
                     <div class="body ">
                         <div class="table-responsive">
-                            <table class="table table-bordered table-striped table-hover dataTable js-exportable ">
+                            <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                                 <thead>
                                     <tr class="align-center">
                                         <th>Ticket</th>
@@ -21,32 +21,21 @@
                                         <th>Animalito</th>
                                         <th>Fecha</th>
                                         <th>Hora</th>
+                                        <th>Hora de Jugada</th>
                                         <th>Total a pagar</th>
                                     </tr>
                                 </thead>
 
                                 <tbody class="align-center">
-                                <?php foreach ($tickets as $ticket) :
-                                        $ticket_pagar = $ticket->costo_unitario*15;
-                                        switch ($ticket->hora_jugada) {
-                                            case '10:00:00': $ampm = 'AM'; break;
-                                            case '11:00:00': $ampm = 'AM'; break;
-                                            case '12:00:00': $ampm = 'PM'; break;
-                                            case '01:00:00': $ampm = 'PM'; break;
-                                            case '04:00:00': $ampm = 'PM'; break;
-                                            case '05:00:00': $ampm = 'PM'; break;
-                                            case '06:00:00': $ampm = 'PM'; break;
-                                            case '07:00:00': $ampm = 'PM'; break;
-                                        }
-                                        $animal = explode(':', $ticket->animal_ganado);
-                                    ?>
+                                <?php foreach ($tickets as $ticket) : ?>
                                     <tr>
+                                        <td><?= $ticket->numero_ticket; ?></td>
                                         <td><?= $ticket->numero; ?></td>
-                                        <td><?= $animal[0]; ?></td>
-                                        <td><?= $animal[1]; ?></td>
+                                        <td><?= $ticket->animal; ?></td>
                                         <td><?= $ticket->fecha; ?></td>
-                                        <td><?= $ticket->hora_jugada.' '.$ampm; ?></td>
-                                        <td><?= number_format($ticket_pagar,2,',','.'); ?> Bs.F.</td>
+                                        <td><?= $ticket->hora; ?></td>
+                                        <td><?= $ticket->hora_jugada; ?></td>
+                                        <td><?= number_format($ticket->costo*30,0,',','.'); ?> Bs.F.</td>
                                     </tr>                                    
                                 <?php endforeach; ?>
                                 </tbody>

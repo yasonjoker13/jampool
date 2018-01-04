@@ -128,7 +128,7 @@
                     </li>
 
                 <?php if($priv->rol == 1): ?>
-                    <li>
+                    <li <?php if($uri == 'configuracion'){ echo 'class="active"'; } ?>>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">settings</i>
                             <span>CONFIGURACIÓN</span>

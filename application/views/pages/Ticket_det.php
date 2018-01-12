@@ -24,7 +24,7 @@
                                     <tr>
                                         <td><b>Horas de Jugada:</b>
                                             <?php foreach ($horas as $hora) : ?>
-                                                <span> - <?= $hora->hora_jugada; ?></span>
+                                                <span <?php if($hora->status == 1){ echo 'class="badge bg-cyan"'; } ?>> - <?= $hora->hora_jugada; ?></span>
                                             <?php endforeach; ?>
                                         </td>
                                     </tr>

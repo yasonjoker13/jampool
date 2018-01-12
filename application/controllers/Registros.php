@@ -73,11 +73,13 @@ class Registros extends CI_Controller
 		foreach ($result as $key) {	
 			$ticket = $key->id_ticket;
 			$jugada = $key->id_jugada;
+			$hora 	= $key->id_hora;
 			$update = [
 				'status' 		=> '1',
 			];
 			$this->Registros_model->updateTicket($ticket, $update);
 			$this->Registros_model->updateJugada($jugada, $update);
+			$this->Registros_model->updateHora($hora, $update);
 		}
 		redirect();
 	}

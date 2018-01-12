@@ -18,16 +18,16 @@
 
                         <div class="row m-lotto">
                             <div class="col-sm-6">
-                                <div class="form-group ">
+                                <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" name="monto" id="monto" class="form-control monto" placeholder="Monto" autocomplete="off" onKeyPress="return numeros(event)" maxlength="10" />
+                                        <input type="text" name="numero" id="numero" class="form-control" placeholder="Número" autocomplete="off" onKeyPress="return numeros(event)" maxlength="2" />
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="form-group">
+                                <div class="form-group ">
                                     <div class="form-line">
-                                        <input type="text" name="numero" id="numero" class="form-control" placeholder="Número" autocomplete="off" onKeyPress="return numeros(event)" maxlength="2" />
+                                        <input type="text" name="monto" id="monto" class="form-control monto" placeholder="Monto" autocomplete="off" onKeyPress="return numeros(event)" maxlength="10" />
                                     </div>
                                 </div>
                             </div>

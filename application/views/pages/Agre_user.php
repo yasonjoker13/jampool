@@ -11,7 +11,7 @@
 	                            <div class="col-sm-4 col-md-4">
 		                            <div class="form-group">
 		                                <div class="form-line">
-		                                    <input type="text" name="identificacion" class="form-control" placeholder="Cedula Identidad" required="required" maxlength="8" onKeyPress="return numeros(event)"/>
+		                                    <input type="text" name="identificacion" class="form-control" placeholder="Cedula Identidad" required="required" maxlength="8" onKeyPress="return numeros(event);"/>
 		                                </div>
 		                            </div>
 	                            </div>
@@ -54,7 +54,7 @@
 		                        <div class="col-sm-4 col-md-4">
 	                                <div class="form-group">
 	                                    <div class="form-line" id="form-telf">
-	                                        <input type="text" name="telefono" id="telefono" class="form-control" placeholder="Teléfono" required="required" />
+	                                        <input type="text" name="telefono" id="telefono" class="form-control" placeholder="Teléfono" required="required" maxlength="20" onKeyPress="return isTelephone(event);"/>
 	                                    </div>
 	                                </div>
 		                        </div>  

@@ -1,8 +1,18 @@
 ﻿//solo numeros
     function numeros(numero) { // 1
         tecla = (document.all) ? numero.keyCode : numero.which; // 2
-       if (tecla==0 || tecla==8 || tecla==46) return true; // 3
-       //alert(tecla);
+        if (tecla==0 || tecla==8 || tecla==46) return true; // 3
+        //alert(tecla);
+        patron = /\d/; // Solo acepta números
+        te = String.fromCharCode(tecla); // 5
+        return patron.test(te); // 6
+    }
+
+//Telefono
+    function isTelephone(numero) { // 1
+        tecla = (document.all) ? numero.keyCode : numero.which; // 2
+        if (tecla==0 || tecla==8 || tecla==40 || tecla==41 || tecla==45 || tecla==46) return true; // 3
+        //alert(tecla);
         patron = /\d/; // Solo acepta números
         te = String.fromCharCode(tecla); // 5
         return patron.test(te); // 6
@@ -174,23 +184,14 @@ $(function(){
 
     //Validaciones de usuarios
     $('#submit-user').click(function(e){
-        correo      = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
-        telefono    = /^[0-9]+\-[0-9]+$/;
+        correo       = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
         email = $('#email').val();
-        telf = $('#telefono').val();
 
         if(!correo.test(email) && email != ''){
             e.preventDefault();
             $('#form-email').addClass('focused error');
         }else{
             $('#form-email').removeClass('focused error');
-        }
-
-        if(!telefono.test(telf) && telf != ''){
-            e.preventDefault();
-            $('#form-telf').addClass('focused error');
-        }else{
-            $('#form-telf').removeClass('focused error');
         }
 
     });

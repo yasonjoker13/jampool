@@ -22,29 +22,27 @@ $(function(){
     //Animalitos
     $('.label-animal').click(function(){
         numero = $(this).attr('nume');
+        horas = $(".hora:checked");
         clases = $('.check-ani[num="'+numero+'"]').attr('class');
-        hora = $('.hora[checked="checked"]').val();
-        if(hora == null){
-            hora = '00:00 MM';
-        }
         if(clases == 'col-md-4 col-sm-4 col-xs-6 check-ani bg-teal'){
             $('.check-ani[num="'+numero+'"]').removeClass('bg-teal');
             $('.tr-'+numero).css('display','none');
             valor = $('.input-checkbox-animalito[id="animal_'+numero+'"]').attr('costo');
-            total = $('#total').text();
-            if(total == '0'){
+            sub_total = $('#sub-total').text();
+            if(sub_total == '0'){
                 resta = '0'
             }else{
-                resta = total-valor;
+                resta = sub_total-valor;
             }
-            $('#total').text(resta);
-            $('#costo_total').val(resta);
+            $('#sub-total').text(resta);
+            total = (horas.length)*resta;
+            $('#total').text(total);
+            $('#costo_total').val(total);
             $('.input-checkbox-animalito[id="animal_'+numero+'"]').removeAttr('costo');
             $('.animal-'+numero).text('');
         }else{
             $('.check-ani[num="'+numero+'"]').addClass('bg-teal');
             $('.tr-'+numero).removeAttr('style');
-            $('.td-hora').text(hora);
             $('.animal-'+numero).text('0');
             $('.input-checkbox-animalito[id="animal_'+numero+'"]').removeAttr('costo');
         }
@@ -53,12 +51,27 @@ $(function(){
     //Hora
     $('.label-hora').click(function(){
         este = $(this).attr('for');
-        hora = $('#'+este).val();
         check = $('#'+este).attr('disabled');
+        sub_total = $('#sub-total').text();
+        cantidad = $(".hora:checked");
         if(check != 'disabled'){
-            $('.hora').removeAttr('checked');
-            $('#'+este).attr('checked','checked');
-            $('.td-hora').text(hora);
+            style = $('.td-hora span.'+este).attr('style');
+            if(style == 'display: none;'){
+                multi = (cantidad.length+1)*sub_total;
+                $('.td-hora span.'+este).css('display','inline-block');
+                $('#total').text(multi);
+                $('#costo_total').val(multi);
+            }else{
+                divid = (cantidad.length-1)*sub_total;
+                $('.td-hora span.'+este).css('display','none');
+                if(divid == 0){
+                   $('#total').text(sub_total);
+                   $('#costo_total').val(sub_total);
+                }else{
+                    $('#total').text(divid);
+                    $('#costo_total').val(divid);
+                }
+            }
         }
     });
 
@@ -66,13 +79,21 @@ $(function(){
     $('#monto').change(function(){
         monto = $(this).val();
         $('.td-costo').each(function(){
-            total = $('#total').text();
+            horas = $(".hora:checked");
+            sub_total = $('#sub-total').text();
             costo = $(this).text();
             if(costo == '0'){
                 $(this).text(monto);
-                suma = parseInt(monto)+parseInt(total);
-                $('#total').text(suma);
-                $('#costo_total').val(suma);
+                suma = parseInt(monto)+parseInt(sub_total);
+                $('#sub-total').text(suma);
+                if(horas.length == '0'){
+                    $('#total').text(suma);
+                    $('#costo_total').val(suma);
+                }else{
+                    total = horas.length*suma;
+                    $('#total').text(total);
+                    $('#costo_total').val(total);
+                }
                 //colocar value
                 id = $(this).attr('id');
                 numero = $('.input-checkbox-animalito[id="ani'+id+'"]').data('num');
@@ -81,18 +102,34 @@ $(function(){
                 $('.input-checkbox-animalito[id="ani'+id+'"]').attr('costo', monto);
             }
         });
+        $(this).val('');
+    });
+
+    //Numero
+    $('#numero').change(function(){
+        numero = $(this).val();
+        $('.tr-'+numero).removeAttr('style');
+        costo = $('.animal-'+numero).text();
+        if(costo == ''){
+            $('.animal-'+numero).text('0');
+            $('.check-ani[num="'+numero+'"]').addClass('bg-teal');
+        }
+        $(this).val('');
     });
 
     //Edicion
     $('.td-costo').focus(function(){
         costo_ini = $(this).text();
-            total = $('#total').text();
+        sub_total = $('#sub-total').text();
         $(this).change(function(){
-            resta = parseInt(total)-parseInt(costo_ini);
+            resta = parseInt(sub_total)-parseInt(costo_ini);
             costo = $(this).text();
             suma = parseInt(costo)+parseInt(resta);
-            $('#total').text(suma);
-            $('#costo_total').val(suma);
+            $('#sub-total').text(suma);
+            horas = $(".hora:checked");
+            total = horas.length*suma;
+            $('#total').text(total);
+            $('#costo_total').val(total);
             //colocar value
             id = $(this).attr('id');
             numero = $('.input-checkbox-animalito[id="ani'+id+'"]').data('num');
@@ -103,12 +140,13 @@ $(function(){
     });
 
     //reset-ani
-    $('.confirm').click(function(){
+    $('#reset-ani').click(function(){
         $('.check-ani').removeClass('bg-teal');
-        $('.hora').removeAttr('checked');
+        $('.td-hora span').css('display','none');
         $('.input-checkbox-animalito').removeAttr('checked');
         $('.tr-animales').css('display','none');
         $('.td-costo').text('');
+        $('#sub-total').text('0');
         $('#total').text('0');
     });
 
@@ -164,10 +202,10 @@ $(function(){
         $('.input-checkbox-animalito').removeAttr('checked');
         $('.tr-animales').css('display','none');
         $('.td-costo').text('');
-        $('#total').text('0');
+        $('#sub-total').text('0');
     });
 
-    //validacion
+    //validacion de ventas
     $('#submit-play').click(function(e){
         animalitos = $('.input-checkbox-animalito:checked');
         hora = $(".hora:checked");
@@ -190,7 +228,7 @@ $(function(){
                     e.preventDefault();
                     $('#btn-falta').click();
                     return false;
-                }else if(cantidad != ''){
+                }else if(cantidad != '' && hora.length > 0 && animalitos.length > 0){
                     $('#enviar-play').click();
                 }
             });

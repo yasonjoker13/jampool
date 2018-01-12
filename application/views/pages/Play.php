@@ -11,15 +11,24 @@
 
                         <div>
                             <?php foreach ($horas as $num => $value) : ?>
-                                <input type="radio" name="hora" value="<?= $value; ?>" id="md_radio_<?= $num; ?>" class="filled-in chk-col-cyan hora" <?php if(mdate('%H') >= $num){ echo 'disabled="disabled"'; } ?>/>
+                                <input type="checkbox" name="hora[]" value="<?= $value; ?>" id="md_radio_<?= $num; ?>" class="filled-in chk-col-cyan hora" <?php if(mdate('%H') >= $num){ echo 'disabled="disabled"'; } ?>/>
                                 <label for="md_radio_<?= $num; ?>" class="label-hora"><?= $value; ?></label>
                             <?php endforeach; ?>
                         </div>
 
-                        <div class="m-lotto">
-                            <div class="form-group">
-                                <div class="form-line">
-                                    <input type="text" name="monto" id="monto" class="form-control" required="required" placeholder="Monto" autocomplete="off" onKeyPress="return numeros(event)"/>
+                        <div class="row m-lotto">
+                            <div class="col-sm-6">
+                                <div class="form-group ">
+                                    <div class="form-line">
+                                        <input type="text" name="monto" id="monto" class="form-control monto" placeholder="Monto" autocomplete="off" onKeyPress="return numeros(event)" maxlength="10" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" name="numero" id="numero" class="form-control" placeholder="Número" autocomplete="off" onKeyPress="return numeros(event)" maxlength="2" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -57,33 +66,43 @@
                         <div class="table-responsive">
                             
                             <table id="mainTable" class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Hora</th>
-                                            <th>Número</th>
-                                            <th>Animal</th>
-                                            <th>Costo Total</th>
+                                <thead>
+                                    <tr>
+                                        <th>Horas:</th>
+                                        <td colspan="2" class="td-hora">
+                                            <?php foreach ($horas as $num => $value) : ?>
+                                                <span class="md_radio_<?= $num; ?>" style="display: none;"> - <?= $value; ?></span>
+                                            <?php endforeach; ?>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Número</th>
+                                        <th>Animal</th>
+                                        <th>Costo Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($animales as $animal) : ?>
+                                        <tr class="tr-animales tr-<?= $animal->numero; ?>" style="display: none;">
+                                            <td><?= $animal->numero; ?></td>
+                                            <td><?= $animal->animal; ?></td>
+                                            <td class="td-costo editable animal-<?= $animal->numero; ?>" id="mal_<?= $animal->numero; ?>"></td>
                                         </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php foreach ($animales as $animal) : ?>
-                                            <tr class="tr-animales tr-<?= $animal->numero; ?>" style="display: none;">
-                                                <td class="td-hora"></td>
-                                                <td><?= $animal->numero; ?></td>
-                                                <td><?= $animal->animal; ?></td>
-                                                <td class="td-costo editable animal-<?= $animal->numero; ?>" id="mal_<?= $animal->numero; ?>"></td>
-                                            </tr>
-                                        <?php endforeach; ?>
-                                    </tbody>
-                                    <tfooter>
-                                        <tr>
-                                            <th colspan="3" class="align-right">Total: 
-                                                <input type="hidden" name="costo_total" id="costo_total">
-                                            </th>
-                                            <th id="total">0</th>
-                                        </tr>
-                                    </tfooter>
-                                </table>
+                                    <?php endforeach; ?>
+                                </tbody>
+                                <tfooter>
+                                    <tr>
+                                        <th colspan="2" class="align-right">Sub-Total:</th>
+                                        <th id="sub-total">0</th>
+                                    </tr>
+                                    <tr>
+                                        <th colspan="2" class="align-right">Total: 
+                                            <input type="hidden" name="costo_total" id="costo_total">
+                                        </th>
+                                        <th id="total">0</th>
+                                    </tr>
+                                </tfooter>
+                            </table>
 
                             <div class="align-center">
                                 <button type="submit" id="submit-play" class="btn bg-cyan waves-effect">Emitir</button>

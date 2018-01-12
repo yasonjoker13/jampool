@@ -22,7 +22,11 @@
                                         <td><b>Hora:</b> <?= $ticket->hora; ?></td>
                                     </tr>
                                     <tr>
-                                        <td><b>Hora de Jugada:</b> <?= $ticket->hora_jugada; ?></td>
+                                        <td><b>Horas de Jugada:</b>
+                                            <?php foreach ($horas as $hora) : ?>
+                                                <span> - <?= $hora->hora_jugada; ?></span>
+                                            <?php endforeach; ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td><b>Total:</b> <?= number_format($ticket->costo_total,2,',','.'); ?> Bs.F.</td>

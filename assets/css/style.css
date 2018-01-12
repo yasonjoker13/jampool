@@ -8069,6 +8069,14 @@ html.ie11 .bs-searchbox .form-control {
     margin: 17px;
   }
 
+  .m-lotto .col-sm-6{
+    margin-bottom: 0px !important;
+  }
+
+  input.monto{
+    text-align: right;
+  }
+
   .bor-cyan{
     border-top: 2px solid #16a899;
     border-radius: 5px;

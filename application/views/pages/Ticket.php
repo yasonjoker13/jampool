@@ -12,7 +12,7 @@
                                         <th>Nro</th>
                                         <th>Fecha</th>
                                         <th>Hora</th>
-                                        <th>Hora de Juego</th>
+                                        <th>Horas de Juego</th>
                                         <th>Total Pagado</th>
                                         <th>Estados</th>
                                         <th>Accion</th>
@@ -25,7 +25,12 @@
                                             <td><?= $ticket->numero; ?></td>
                                             <td><?= $ticket->fecha; ?></td>
                                             <td><?= $ticket->hora; ?></td>
-                                            <td><?= $ticket->hora_jugada; ?></td>
+                                            <td>
+                                                <?php $horas = $this->Ventas_model->getHorasTicket($ticket->numero); ?>
+                                                <?php foreach ($horas as $hora) : ?>
+                                                    <span><?= '('.$hora->hora_jugada.')'; ?> </span>
+                                                <?php endforeach; ?>
+                                            </td>
                                             <td><?= number_format($ticket->costo_total,0,',','.'); ?> Bs.F.</td>
                                             <?php 
                                                 switch ($ticket->status) {

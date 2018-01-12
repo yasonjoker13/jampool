@@ -97,29 +97,27 @@ class Ventas extends CI_Controller {
 	public function insert()
 	{
 		$numero 		= $this->security->xss_clean(strip_tags($this->input->post('ticket')));
-		$hora 			= $this->security->xss_clean($this->input->post('hora'));
+		$horas 			= $this->security->xss_clean($this->input->post('hora'));
 		$animales 		= $this->security->xss_clean($this->input->post('animales'));
 		$costo_total	= $this->security->xss_clean(strip_tags($this->input->post('costo_total')));
-		switch ($hora) {
-			case '13': $hora = '01'; break;
-			case '14': $hora = '02'; break;
-			case '15': $hora = '03'; break;
-			case '16': $hora = '04'; break;
-			case '17': $hora = '05'; break;
-			case '18': $hora = '06'; break;
-			case '19': $hora = '07'; break;
-		}
 		$data = [
 			'numero' 		=> $numero,
 			'fecha'			=> mdate('%d-%m-%Y'),
 			'busqueda'		=> mdate('%Y-%m-%d'),
 			'hora' 			=> mdate('%h:%i %A'),
-			'hora_jugada' 	=> $hora,
 			'costo_total' 	=> $costo_total,
 			'vendedor'		=> $this->session->userdata('jampool_user'),
 			'status' 		=> '0'
 		];
 		$this->Ventas_model->insert($data);
+		foreach ($horas as $hora) {
+			$datosh = [
+				'numero_ticket' => $numero,
+				'hora_jugada'	=> $hora,
+				'status'		=> '0'
+			];
+			$this->Ventas_model->insertHora($datosh);
+		}
 		foreach ($animales as $animal) {
 			$jugada = explode(':', $animal);
 			$datos = [
@@ -153,6 +151,7 @@ class Ventas extends CI_Controller {
 		//Load Model
 		$data['config']		= $this->Ventas_model->getConfig();
 		$data['ticket'] 	= $this->Ventas_model->getDetailsTicket($numero);
+		$data['horas']		= $this->Ventas_model->getHorasTicket($numero);
 		$data['jugadas']	= $this->Ventas_model->getJugadasTicket($numero);
 		//Datos del view
 		$data['title'] 		=  'CONSULTA';

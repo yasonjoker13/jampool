@@ -13,7 +13,7 @@
                                     <tr class="align-center">
                                         <th>Ticket</th>
                                         <th>Hora</th>
-                                        <th>Hora Jugada</th>
+                                        <th>Horas Jugada</th>
                                         <th>Total Cobrado</th>
                                         <th>Estatus</th>
                                     </tr>

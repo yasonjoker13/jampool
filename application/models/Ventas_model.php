@@ -27,6 +27,11 @@ class Ventas_model extends CI_Model
 		$this->db->insert('jugadas', $data);
 	}
 
+	public function insertHora($data)
+	{
+		$this->db->insert('ticket_horas', $data);
+	}
+
 	public function getNumTicket()
 	{
 		$query = $this->db->get('ticket');
@@ -50,6 +55,14 @@ class Ventas_model extends CI_Model
 		return $query->row();
 	}
 
+	public function getHorasTicket($numero)
+	{
+		$this->db->where('numero_ticket', $numero);
+		$this->db->from('ticket_horas');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 	public function getJugadasTicket($numero)
 	{
 		$this->db->where('numero_ticket', $numero);
@@ -66,6 +79,7 @@ class Ventas_model extends CI_Model
 
 	public function ticketGanados()
 	{
+		$this->db->where('ticket_horas.status', '1');
 		$this->db->where('jugadas.status', '1');
 		$this->db->where_in('ticket.status', ['1', '3']);
 		if($this->rol() == 2){
@@ -74,6 +88,7 @@ class Ventas_model extends CI_Model
 		$this->db->select('*');
 		$this->db->from('ticket');
 		$this->db->join('jugadas', 'jugadas.numero_ticket = ticket.numero');
+		$this->db->join('ticket_horas', 'ticket.numero = ticket_horas.numero_ticket');
 		$query = $this->db->get();
 		return $query->result();
 	}

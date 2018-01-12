@@ -153,7 +153,7 @@
                     &copy; 2017 <?= anchor('', 'Jampool'); ?>.
                 </div>
                 <div class="version">
-                    <b>Version: </b> 0.0.1
+                    <b>Version: </b> 1.1.1.18
                 </div>
             </div>
             <!-- #Footer -->

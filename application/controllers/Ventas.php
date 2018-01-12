@@ -77,7 +77,7 @@ class Ventas extends CI_Controller {
 		];
 		$this->resources->initialize($config);
 		//Load model
-		$data['horas'] = ['10' => '10:00 AM','11' => '11:00 AM','12' => '12:00 PM','13' => '01:00 PM','16' => '04:00 PM','17' => '05:00 PM','18' => '06:00 PM','19' => '07:00 PM'];
+		$data['horas'] = ['09'=>'09:00 AM', '10'=>'10:00 AM', '11'=>'11:00 AM', '12'=>'12:00 PM', '13'=>'01:00 PM', '15'=>'03:00 PM', '16'=>'04:00 PM', '17'=>'05:00 PM', '18'=>'06:00 PM', '19'=>'07:00 PM'];
 		$data['animales'] = $this->Ventas_model->getAnimal();
 		$dato = $this->Ventas_model->getNumTicket()+1;
 		$can = strlen($dato);

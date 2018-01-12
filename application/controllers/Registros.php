@@ -50,8 +50,7 @@ class Registros extends CI_Controller
 		//llamados al Model
         $data['time'] 			= mdate('%H');
 		$data['animales'] 		= $this->Registros_model->getAnimal();
-		$data['horas'] 			= ['10' => '10:00 AM','11' => '11:00 AM','12' => '12:00 PM','13' => '01:00 PM','16' => '04:00 PM','17' => '05:00 PM','18' => '06:00 PM','19' => '07:00 PM'];
-		//Llamado al View
+		$data['horas'] = ['09'=>'09:00 AM', '10'=>'10:00 AM', '11'=>'11:00 AM', '12'=>'12:00 PM', '13'=>'01:00 PM', '15'=>'03:00 PM', '16'=>'04:00 PM', '17'=>'05:00 PM', '18'=>'06:00 PM', '19'=>'07:00 PM'];		//Llamado al View
 		$data['title'] 			= 'DECLARAR GANADOR';
 		$data['filename'] 		= 'sorteo';
 		$this->load->view('template', $data);

@@ -30,12 +30,14 @@ class Notify_model extends CI_Model
 
 	public function notifyTicket()
 	{
-		$this->db->where('fecha', date('d-m-Y'));
-		$this->db->where('status', 1);
+		$this->db->where('ticket_horas.status', 1);
+		$this->db->where('ticket.status', 1);
+		$this->db->where('ticket.fecha', date('d-m-Y'));
 		if($this->rol() == 2){
-			$this->db->where('vendedor', $this->user());
+			$this->db->where('ticket.vendedor', $this->user());
 		}
 		$this->db->from('ticket');
+		$this->db->join('ticket_horas', 'ticket_horas.numero_ticket = ticket.numero');
 		$query = $this->db->get();
 		return $query;
 	}

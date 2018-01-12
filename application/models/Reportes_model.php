@@ -16,6 +16,14 @@ class Reportes_model extends CI_Model
 		return $query->result();
 	}
 
+	public function getHorasTicket($numero)
+	{
+		$this->db->where('numero_ticket', $numero);
+		$this->db->from('ticket_horas');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 	public function getTicketTotal($inicio, $final)
 	{
 		if($this->rol() == 2){

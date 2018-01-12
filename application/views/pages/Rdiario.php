@@ -24,7 +24,12 @@
                                         <tr>
                                             <td><?= $reporte->numero; ?></td>
                                             <td><?= $reporte->hora; ?></td>
-                                            <td><?= $reporte->hora_jugada; ?></td>
+                                            <td>
+                                                <?php $horas = $this->Reportes_model->getHorasTicket($reporte->numero); ?>
+                                                <?php foreach ($horas as $hora) : ?>
+                                                    <span><?= '('.$hora->hora_jugada.')'; ?> </span>
+                                                <?php endforeach; ?>
+                                            </td>
                                             <td><?= number_format($reporte->costo_total,0,',','.'); ?> Bs.F.</td>
                                             <?php 
                                                 switch ($reporte->status) {

@@ -55,6 +55,7 @@ class Home_model extends CI_Model
 
 	public function getTicketGanados()
 	{
+		$this->db->where('ticket_horas.status', '1');
 		$this->db->where('jugadas.status', '1');
 		$this->db->where_in('ticket.status', ['1', '3']);
 		if($this->rol() == 2){
@@ -63,6 +64,7 @@ class Home_model extends CI_Model
 		$this->db->select('*');
 		$this->db->from('ticket');
 		$this->db->join('jugadas', 'jugadas.numero_ticket = ticket.numero');
+		$this->db->join('ticket_horas', 'ticket.numero = ticket_horas.numero_ticket');
 		$query = $this->db->get();
 		return $query->result();
 	}

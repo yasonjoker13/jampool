@@ -46,7 +46,12 @@
 	                                <td><?= $ticket->numero; ?></td>
 	                                <td><?= $ticket->fecha; ?></td>
 	                                <td><?= $ticket->hora; ?></td>
-	                                <td><?= $ticket->hora_jugada; ?></td>
+	                                <td>
+                                        <?php $horas = $this->Reportes_model->getHorasTicket($ticket->numero); ?>
+                                        <?php foreach ($horas as $hora) : ?>
+                                            <span><?= '('.$hora->hora_jugada.')'; ?> </span>
+                                        <?php endforeach; ?>
+                                    </td>
 	                                <td><?= number_format($ticket->costo_total,0,',','.'); ?> Bs.F.</td>
 	                                <?php $jugada = $this->Reportes_model->getJugadaGanada($ticket->numero); ?>
 	                                <?php 

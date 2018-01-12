@@ -117,12 +117,13 @@ $(function(){
 
     //Numero
     $('#numero').change(function(){
+        scroll = $(document).scrollTop();
         numero = $(this).val();
         $('.tr-'+numero).removeAttr('style');
         costo = $('.animal-'+numero).text();
         if(costo == ''){
-            $('.animal-'+numero).text('0');
-            $('.check-ani[num="'+numero+'"]').addClass('bg-teal');
+            $(".label-animal[for='animal_"+numero+"']").click();
+            $(document).scrollTop(scroll);
         }
         $(this).val('');
     });
@@ -137,9 +138,14 @@ $(function(){
             suma = parseInt(costo)+parseInt(resta);
             $('#sub-total').text(suma);
             horas = $(".hora:checked");
-            total = horas.length*suma;
-            $('#total').text(total);
-            $('#costo_total').val(total);
+            if(horas.length == 0){
+                $('#total').text(suma);
+                $('#costo_total').val(suma);
+            }else{
+                total = horas.length*suma;
+                $('#total').text(total);
+                $('#costo_total').val(total);
+            }
             //colocar value
             id = $(this).attr('id');
             numero = $('.input-checkbox-animalito[id="ani'+id+'"]').data('num');
@@ -184,9 +190,8 @@ $(function(){
 
     //Validaciones de usuarios
     $('#submit-user').click(function(e){
-        correo       = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
-        email = $('#email').val();
-
+        correo  = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+        email   = $('#email').val();
         if(!correo.test(email) && email != ''){
             e.preventDefault();
             $('#form-email').addClass('focused error');
@@ -229,8 +234,6 @@ $(function(){
                     e.preventDefault();
                     $('#btn-falta').click();
                     return false;
-                }else if(cantidad != '' && hora.length > 0 && animalitos.length > 0){
-                    $('#enviar-play').click();
                 }
             });
         }

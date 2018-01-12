@@ -106,11 +106,7 @@
 
                             <div class="align-center">
                                 <button type="submit" id="submit-play" class="btn bg-cyan waves-effect">Emitir</button>
-                                <button type="reset" class="btn bg-grey waves-effect reset" id="reset-ani" data-type="confirm">Eliminar</button>
-                                <div class="hidden js-sweetalert">
-                                    <button type="button" id="enviar-play" class="btn bg-cyan waves-effect" data-type="success">Enviar</button>
-                                    <button type="button" id="reset-play" class="btn bg-grey waves-effect">Borrar</button>
-                                </div>
+                                <button type="reset"  id="reset-ani" class="btn bg-grey waves-effect reset">Eliminar</button>
                             </div>
                         </div>
                     </div>

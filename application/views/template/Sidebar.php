@@ -43,7 +43,7 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <?= anchor('ventas/nuevo', '<i class="material-icons">add_circle_outline</i><span>Juego Nuevo</span>'); ?>
+                                <?= anchor('ventas/reportes', '<i class="material-icons">add_circle_outline</i><span>Reportes</span>'); ?>
                             </li>
                             <li>
                                 <?= anchor('ventas/ticket', '<i class="material-icons">receipt</i><span>Ticket</span>'); ?>

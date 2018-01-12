@@ -66,7 +66,7 @@ class Home extends CI_Controller {
 		$data['ticket_ganado']	 = $this->Home_model->getTicketGanados();
 		$data['notify_animal']	 = $this->Home_model->notifyAnimal();
 		//Llamado al view
-		$data['title']			 = 'INICIO';
+		$data['title']			 = 'REPORTES';
 		$data['filename'] 		 = 'index';
 		$this->load->view('template', $data);
 		mdate('%d-%m-%Y');

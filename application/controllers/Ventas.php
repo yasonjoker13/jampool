@@ -48,7 +48,7 @@ class Ventas extends CI_Controller {
 	}
 
 	//Vista del la nuevo juego
-	public function nuevo()
+	public function index()
 	{
 		//Config del CSS y JS
 		$config['css_files'] = [

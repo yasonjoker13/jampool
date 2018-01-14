@@ -18,18 +18,21 @@ class Registros_model extends CI_Model
 		return $query->num_rows();
 	}
 
+	public function check_hora($hora)
+	{
+		$this->db->where('hora', $hora);
+		$this->db->where('fecha', mdate('%d-%m-%Y'));
+		$query = $this->db->get('sorteos');
+		if($query->num_rows() > 0){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	}
+
 	public function insert($data)
 	{
-		$this->db->where('fecha', $data['fecha'])
-				 ->where('hora', $data['hora'])
-				 ->from('sorteos');
-		$query = $this->db->get();
-		if($query->num_rows() > 0){
-			$this->session->set_flashdata('mensaje','Ya se ha registrado un sorteo a esta hora: <b>'.$data['hora'].'</b>');
-			redirect('registros/sorteo');
-		}else{
-			$this->db->insert('sorteos', $data);
-		}
+		$this->db->insert('sorteos', $data);
 	}
 
 	public function getUpdate($numero, $fecha, $hora)

@@ -165,12 +165,11 @@ class Configuracion extends CI_Controller
 	public function agg_user()
 	{
 		$this->form_validation->set_error_delimiters('<div class="alert bg-red alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>', '</div>');
-		$this->form_validation->set_rules('identificacion', 'Cedula', 'required|callback_check_ident');
-		$this->form_validation->set_rules('nombre', 'Nombre', 'required');
-		$this->form_validation->set_rules('email', 'Email', 'required|callback_check_email');
-		$this->form_validation->set_rules('username', 'Nombre de Usuario', 'required|callback_check_unser');
-		$this->form_validation->set_rules('password', 'Contraseña', 'required');
-		$this->form_validation->set_rules('repassword', 'Repetir Contraseña', 'required|matches[password]');
+		$this->form_validation->set_rules('identificacion', 'Cédula', 'min_length[7]|callback_check_ident');
+		$this->form_validation->set_rules('email', 'Email', 'callback_check_email');
+		$this->form_validation->set_rules('username', 'Nombre de Usuario', 'callback_check_unser');
+		$this->form_validation->set_rules('password', 'Contraseña', 'min_length[5]');
+		$this->form_validation->set_rules('repassword', 'Repetir Contraseña', 'min_length[5]|matches[password]');
 
 		if($this->form_validation->run() === FALSE){
 			//Config del CSS y JS

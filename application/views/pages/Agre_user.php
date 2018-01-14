@@ -13,7 +13,7 @@
 	                            <div class="col-sm-4 col-md-4">
 		                            <div class="form-group">
 		                                <div class="form-line">
-		                                    <input type="text" name="identificacion" value="<?= set_value('identificacion'); ?>" class="form-control" placeholder="Cedula Identidad" maxlength="8" onKeyPress="return numeros(event);"/>
+		                                    <input type="text" name="identificacion" value="<?= set_value('identificacion'); ?>" class="form-control" placeholder="Cedula Identidad" required="required" maxlength="8" onKeyPress="return numeros(event);"/>
 		                                </div>
 		                            </div>
 	                            </div>
@@ -21,7 +21,7 @@
 		                        <div class="col-sm-4 col-md-4">
 	                                <div class="form-group">
 	                                    <div class="form-line">
-	                                        <input type="text" name="nombre" value="<?= set_value('nombre'); ?>" class="form-control" placeholder="Nombre" onKeyPress="return isNumber(event);"/>
+	                                        <input type="text" name="nombre" value="<?= set_value('nombre'); ?>" class="form-control" placeholder="Nombre" required="required" onKeyPress="return isNumber(event);"/>
 	                                    </div>
 	                                </div>
 		                        </div>
@@ -29,7 +29,7 @@
 		                        <div class="col-sm-4 col-md-4">
 	                                <div class="form-group">
 	                                    <div class="form-line">
-	                                        <input type="text" name="apellido" value="<?= set_value('apellido'); ?>" class="form-control" placeholder="Apellido" onKeyPress="return isNumber(event);"/>
+	                                        <input type="text" name="apellido" value="<?= set_value('apellido'); ?>" class="form-control" placeholder="Apellido" required="required" onKeyPress="return isNumber(event);"/>
 	                                    </div>
 	                                </div>
 		                        </div>
@@ -40,7 +40,7 @@
 	                            <div class="col-sm-4 col-md-4">
 	                                <div class="form-group">
 	                                    <div class="form-line" >
-	                                        <input type="text" name="nacimiento" value="<?= set_value('nacimiento'); ?>" class="datepicker form-control" placeholder="Fecha de Nacimiento" >
+	                                        <input type="text" name="nacimiento" value="<?= set_value('nacimiento'); ?>" class="datepicker form-control" placeholder="Fecha de Nacimiento" required="required">
 	                                    </div>
 	                                </div>
 	                            </div>
@@ -48,7 +48,7 @@
 		                        <div class="col-sm-4 col-md-4">
 	                                <div class="form-group">
 	                                    <div class="form-line" id="form-email">
-	                                        <input type="email" name="email" id="email" value="<?= set_value('email'); ?>" class="form-control" placeholder="E-Mail" />
+	                                        <input type="email" name="email" id="email" value="<?= set_value('email'); ?>" class="form-control" placeholder="E-Mail" required="required"/>
 	                                    </div>
 	                                </div>
 		                        </div>
@@ -56,7 +56,7 @@
 		                        <div class="col-sm-4 col-md-4">
 	                                <div class="form-group">
 	                                    <div class="form-line" id="form-telf">
-	                                        <input type="text" name="telefono" id="telefono" value="<?= set_value('telefono'); ?>" class="form-control" placeholder="Teléfono" maxlength="20" onKeyPress="return isTelephone(event);"/>
+	                                        <input type="text" name="telefono" id="telefono" value="<?= set_value('telefono'); ?>" class="form-control" placeholder="Teléfono" required="required" maxlength="20" onKeyPress="return isTelephone(event);"/>
 	                                    </div>
 	                                </div>
 		                        </div>  
@@ -72,12 +72,12 @@
 				                        <div class="col-sm-4 col-md-4">
 			                                <div class="form-group">
 			                                    <div class="form-line">
-			                                        <input type="text" name="username" value="<?= set_value('username'); ?>" class="form-control" placeholder="Usuario" />
+			                                        <input type="text" name="username" value="<?= set_value('username'); ?>" class="form-control" placeholder="Usuario" required="required"/>
 			                                    </div>
 			                                </div>
 				                        </div>
 				                        <div class="col-sm-4 col-md-4">
-			                                <select name="rol" class="form-control show-tick" >
+			                                <select name="rol" class="form-control show-tick" required="required">
 			                                    <option value="">Rol</option>
 			                                    <option value="1" <?= set_select('rol','1'); ?>>Administrador</option>
 			                                    <option value="2" <?= set_select('rol','2'); ?>>Consultor</option>
@@ -86,7 +86,7 @@
 				                        <div class="col-sm-4 col-md-4">
 			                                <div class="form-group">
 			                                    <div class="form-line">
-			                                        <input type="password" name="password" value="<?= set_value('password'); ?>" class="form-control" placeholder="Contraseña" />
+			                                        <input type="password" name="password" value="<?= set_value('password'); ?>" class="form-control" placeholder="Contraseña" required="required"/>
 			                                    </div>
 			                                </div>
 				                        </div>
@@ -96,7 +96,7 @@
 				                        <div class="col-sm-4 col-md-4">
 			                                <div class="form-group">
 			                                    <div class="form-line">
-			                                        <input type="password" name="repassword" value="<?= set_value('repassword'); ?>" class="form-control" placeholder="Repetir Contraseña" />
+			                                        <input type="password" name="repassword" value="<?= set_value('repassword'); ?>" class="form-control" placeholder="Repetir Contraseña" required="required"/>
 			                                    </div>
 			                                </div>
 				                        </div>
@@ -106,7 +106,7 @@
 				                        <div class="col-sm-4 col-md-4">
 				                            <div class="form-group">
 				                                <div class="form-line">
-				                                    <input type="text" name="ticketera" value="<?= set_value('ticketera'); ?>" class="form-control" placeholder="Ticketera" />
+				                                    <input type="text" name="ticketera" value="<?= set_value('ticketera'); ?>" class="form-control" placeholder="Ticketera" required="required"/>
 				                                </div>
 				                            </div>
 				                        </div>

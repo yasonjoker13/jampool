@@ -42,6 +42,7 @@ class Configuracion extends CI_Controller
 			'Custom Js 1' 				 	=> 'js/admin',
 			'Custom Js 2' 				 	=> 'js/pages/ui/dialogs',
 			'Script'						=> 'js/script',
+			'Calculator'					=> 'js/calculator',
 			'Demo Js' 					 	=> 'js/demo'
 		];
 		$this->resources->initialize($config);
@@ -78,6 +79,7 @@ class Configuracion extends CI_Controller
 			'Custom Js 1' 				 	=> 'js/admin',
 			'Custom Js 2' 				 	=> 'js/pages/forms/basic-form-elements',
 			'Script'						=> 'js/script',
+			'Calculator'				 	=> 'js/calculator',
 			'Demo Js' 					 	=> 'js/demo'
 		];
 		$this->resources->initialize($config);
@@ -138,6 +140,7 @@ class Configuracion extends CI_Controller
 			'Custom Js 1' 				 	=> 'js/admin',
 			'Custom Js 2' 				 	=> 'js/pages/ui/dialogs',
 			'Script'						=> 'js/script',
+			'Calculator'				 	=> 'js/calculator',
 			'Demo Js' 					 	=> 'js/demo'
 		];
 		$this->resources->initialize($config);
@@ -183,6 +186,7 @@ class Configuracion extends CI_Controller
 			'Custom Js 1' 				 					=> 'js/admin',
 			'Custom Js 2' 				 					=> 'js/pages/forms/basic-form-elements',
 			'Script'										=> 'js/script',
+			'Calculator'				 					=> 'js/calculator',
 			'Demo Js' 					 					=> 'js/demo'
 		];
 		$this->resources->initialize($config);

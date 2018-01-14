@@ -42,6 +42,7 @@ class Ventas extends CI_Controller {
 			'Tables Js 10' 				 => 'js/pages/tables/jquery-datatable',
 			'Custom Js 1' 				 => 'js/admin',
 			'Custom Js 2' 				 => 'js/pages/ui/dialogs',
+			'Calculator'				 => 'js/calculator',
 			'Demo Js' 					 => 'js/demo'
 		];
 		return $config;
@@ -73,6 +74,7 @@ class Ventas extends CI_Controller {
 			'Custom Js 4'				 => 'js/pages/ui/notifications',
 			'Custom Js 3'				 => 'js/pages/tables/editable-table',
 			'Script'					 => 'js/script',
+			'Calculator'				 => 'js/calculator',
 			'Demo Js' 					 => 'js/demo'
 		];
 		$this->resources->initialize($config);
@@ -207,6 +209,7 @@ class Ventas extends CI_Controller {
 			'Waves Effect Plugin Js' 	 => 'plugins/node-waves/waves',
 			'Chart Plugins Js' 			 => 'plugins/chartjs/Chart.bundle',
 			'Custom Js 1' 				 => 'js/admin',
+			'Calculator'				 => 'js/calculator',
 			'Demo Js' 					 => 'js/demo'
 		];
 		$this->resources->initialize($config);

@@ -50,6 +50,7 @@ class Home extends CI_Controller {
 			'Custom Js 1' 				=> 'js/admin',
 			'Custom Js 2' 				=> 'js/pages/index',
 			'Custom Js 3'				=> 'js/pages/ui/dialogs',
+			'Calculator'				=> 'js/calculator',
 			'Demo Js' 					=> 'js/demo',
 		];
 		$this->resources->initialize($config);

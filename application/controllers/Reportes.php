@@ -52,6 +52,7 @@ class Reportes extends CI_Controller
 			'Custom Js 1' 				 	=> 'js/admin',
 			'Custom Js 2'					=> 'js/pages/forms/basic-form-elements',
 			'Custom Js 3' 				 	=> 'js/pages/ui/dialogs',
+			'Calculator'				 	=> 'js/calculator',
 			'Demo Js' 					 	=> 'js/demo'
 		];
 		return $config;

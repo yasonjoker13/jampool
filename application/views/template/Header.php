@@ -66,8 +66,11 @@
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Call Search -->
-                    <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
+                    <!--<li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>-->
                     <!-- #END# Call Search -->
+                    <!-- Calculator -->
+                    <li><a href="javascript:void(0);" class="calculator" data-toggle="modal" data-target="#calculator"><i class="material-icons">pan_tool</i></a></li>
+                    <!-- #END# Calculator -->
                     <?php $priv = $this->Session_model->priv_user(); ?>
                     <!-- Notifications -->
                     <li class="dropdown">
@@ -174,3 +177,50 @@
             </div>
         </div>
     </nav>
+
+    <!-- Calculator Modal -->
+    <div class="modal fade" id="calculator" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-cyan">
+                    <h4 class="modal-title" id="smallModalLabel">CALCULADORA</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="num-1" class="form-control text-center" onKeyPress="return numCalculator(event);"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="label-operation">&nbsp;</label>
+                                <div class="form-line">
+                                    <input type="text" id="num-2" class="form-control text-center" onKeyPress="return numCalculator(event);"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>=</label>
+                                <div class="form-line">
+                                    <input type="text" id="num-result" class="form-control text-center" readonly="readonly"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-block waves-effect btn-cal" id="cal-sum">+</button>
+                            <button type="button" class="btn btn-block waves-effect btn-cal" id="cal-res">-</button>
+                            <button type="button" class="btn btn-block waves-effect btn-cal" id="cal-div">/</button>
+                            <button type="button" class="btn btn-block waves-effect btn-cal" id="cal-mul">*</button>
+                            <button type="button" class="btn btn-block bg-cyan waves-effect" id="cal-igu">=</button>
+                            <button type="button" class="btn btn-block bg-grey waves-effect" id="cal-ce">CE</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CERRAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #END# Calculator Modal -->

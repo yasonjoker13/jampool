@@ -44,6 +44,7 @@ class Registros extends CI_Controller
 			'Bootstrap Material Datetime Picker Plugin Js' 	=> 'plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker',
 			'Custom Js 1' 									=> 'js/admin',
 			'Custom Js 2' 									=> 'js/pages/forms/basic-form-elements',
+			'Calculator'				 					=> 'js/calculator',
 			'Demo Js' 										=> 'js/demo'
 		];
 		$this->resources->initialize($config);

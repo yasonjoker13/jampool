@@ -5,11 +5,6 @@
                     
                     <div class=" header  bor-cyan">
                         <h2>Numero Ganador</h2>
-                        <div class=" align-right"> 
-                            <a href="javascript:void(0);" class="js-search" data-close="true">
-                                <i class="material-icons">search</i>
-                            </a>
-                        </div>
                     </div>
                     <div class="body ">
                         <div class="table-responsive">

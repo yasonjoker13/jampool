@@ -8050,7 +8050,7 @@ html.ie11 .bs-searchbox .form-control {
 
 /* CLASSSSS----------------------------------- */
   .dataTables_filter label{
-    display: none;
+    float: right;
   }
 
   .lotto{

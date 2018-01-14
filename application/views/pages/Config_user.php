@@ -9,14 +9,14 @@
                             <table class="table table-bordered table-striped table-hover dataTable js-exportable ">
                                 <thead>
                                     <tr>
-                                        <th>C. Identidad</th>
+                                        <th>Cédula</th>
                                         <th>Nombre</th>
                                         <th>Apellido</th>
-                                        <th>Username</th>
+                                        <th>Usuario</th>
                                         <th>Rol</th>
-                                        <th>Tickera</th>
+                                        <th>Ticketera</th>
                                         <th>Estatus</th>
-                                        <th>Acción</th>
+                                        <!--<th>Acción</th>-->
                                     </tr>
                                 </thead>
                                 <tbody class="align-center">
@@ -46,9 +46,9 @@
 	                                                 </div>
 	                                            </div>
 	                                        </td>
-	                                        <td>
-	                                            <i class="material-icons">COG</i>
-	                                        </td>
+	                                        <!--<td>
+	                                            <?php // anchor('configuracion/users/'.$usuario->username, '<button type="button" class="btn btn-default waves-effect"><i class="material-icons">menu</i><span>Editar</span></button>'); ?>
+	                                        </td>-->
 	                                    </tr>
                                 	<?php endforeach; ?>
                                 </tbody>

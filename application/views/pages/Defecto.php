@@ -14,7 +14,7 @@
                                         <th>Comision</th>
                                         <th>Minutos para anular</th>
                                         <th>Estatus</th>
-                                        <th>Configuración</th>
+                                        <!--<th>Acción</th>-->
                                     </tr>
                                 </thead>
 
@@ -36,9 +36,9 @@
 	                                                 </div>
 	                                            </div>
 	                                        </td>
-	                                        <td>
+	                                        <!--<td>
 	                                            <i class="material-icons"> </i>
-	                                        </td>
+	                                        </td>-->
 	                                    </tr>
                                 	<?php endforeach; ?>
                                 </tbody>

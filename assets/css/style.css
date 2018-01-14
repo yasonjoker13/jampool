@@ -8053,6 +8053,10 @@ html.ie11 .bs-searchbox .form-control {
     float: right;
   }
 
+  .index-tables .dataTables_filter label{
+    display: none;
+  }
+
   .lotto{
     margin-left: -15%;
     width: 150%;

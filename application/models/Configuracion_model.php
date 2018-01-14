@@ -25,6 +25,39 @@ class Configuracion_model extends CI_Model
 		return $query->result();
 	}
 
+	public function check_ident($identificacion)
+	{
+		$this->db->where('identificacion', $identificacion);
+		$query = $this->db->get('usuarios');
+		if($query->num_rows() > 0){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	}
+
+	public function check_email($email)
+	{
+		$this->db->where('email', $email);
+		$query = $this->db->get('usuarios');
+		if($query->num_rows() > 0){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	}
+
+	public function check_unser($username)
+	{
+		$this->db->where('username', $username);
+		$query = $this->db->get('usuarios');
+		if($query->num_rows() > 0){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	}
+
 	public function insertUser($data)
 	{
 		$this->db->insert('usuarios', $data);

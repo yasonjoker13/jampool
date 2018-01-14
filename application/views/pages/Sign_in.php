@@ -26,17 +26,13 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-8 p-t-5">
-                            <input type="checkbox" name="rememberme" id="rememberme" class="filled-in chk-col-cyan">
-                            <label for="rememberme">Recordar</label>
-                        </div>
-                        <div class="col-xs-4">
+                        <div class="col-xs-12">
                             <button type="submit" name="login" class="btn btn-block bg-cyan waves-effect">Acceder</button>
                         </div>
                     </div>
-                    <div class="row m-t-20 m-b--5 align-center">
-                        <?= anchor('recover','Olvido Contraseña'); ?>
-                    </div>
+                    <!--<div class="row m-t-20 m-b--5 align-center">
+                        <?php // anchor('recover','Olvido Contraseña'); ?>
+                    </div>-->
                 <?= form_close(); ?>
             </div>
         </div>

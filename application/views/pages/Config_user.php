@@ -6,7 +6,7 @@
                     </div>
                     <div class="body">
                         <div class="table-responsive">
-                            <table class="table table-bordered table-striped table-hover dataTable ">
+                            <table class="table table-bordered table-striped table-hover dataTable js-exportable ">
                                 <thead>
                                     <tr>
                                         <th>C. Identidad</th>
@@ -16,7 +16,7 @@
                                         <th>Rol</th>
                                         <th>Tickera</th>
                                         <th>Estatus</th>
-                                        <th>Configuración</th>
+                                        <th>Acción</th>
                                     </tr>
                                 </thead>
                                 <tbody class="align-center">

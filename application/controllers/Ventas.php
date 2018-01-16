@@ -1,4 +1,10 @@
 <?php
+require __DIR__ . '/../autoload.php';
+use Mike42\Escpos\Printer;
+use Mike42\Escpos\EscposImage;
+use Mike42\Escpos\PrintConnectors\FilePrintConnector;
+use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
+
 defined('BASEPATH') OR exit('No se permite el acceso directo al script');
 
 class Ventas extends CI_Controller {
@@ -132,6 +138,16 @@ class Ventas extends CI_Controller {
 			$this->Ventas_model->insertJugada($datos);
 		}
 		redirect('ventas/detalles-ticket/'.$numero);
+	}
+
+	public function imprimir()
+	{
+		/* Call this file 'hello-world.php' */
+		$connector = new FilePrintConnector("php://stdout");
+		$printer = new Printer($connector);
+		$printer -> text("Hello World!\n");
+		$printer -> cut();
+		$printer -> close();
 	}
 
 	public function ticket()

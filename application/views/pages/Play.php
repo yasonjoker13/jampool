@@ -114,6 +114,8 @@
             
             </div>
 
+            <?= anchor('ventas/imprimir', 'Imprimir'); ?>
+
             <div class="col-md-12 jsdemo-notification-button hidden">
                 <button id="btn-animal" type="button" data-placement-from="top" data-text="Seleccione algún Animalito" data-placement-align="right" data-animate-enter="animated zoomInRight" data-animate-exit="animated zoomOutRight" data-color-name="bg-teal">FALTA ANIMAL</button>
                 <button id="btn-hora" type="button" data-placement-from="top" data-text="Seleccione alguna Hora" data-placement-align="right" data-animate-enter="animated zoomInRight" data-animate-exit="animated zoomOutRight" data-color-name="bg-teal">FALTA HORA</button>

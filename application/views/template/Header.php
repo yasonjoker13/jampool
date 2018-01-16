@@ -103,7 +103,7 @@
                                             <li>
                                                 <a href="javascript:void(0);">
                                                     <div class="icon-circle bg-cyan">
-                                                        <i class="material-icons">add_shopping_cart</i>
+                                                        <i class="material-icons">pets</i>
                                                     </div>
                                                     <div class="menu-info">
                                                         <h4><?= $animal->numero.' ('.$animal->animalito.')'; ?></h4>
@@ -118,7 +118,7 @@
                                             <li>
                                                 <a href="javascript:void(0);">
                                                     <div class="icon-circle bg-orange">
-                                                        <i class="material-icons">cached</i>
+                                                        <i class="material-icons">receipt</i>
                                                     </div>
                                                     <div class="menu-info">
                                                         <h4>Ganador: <?= $ticket->numero; ?></h4>

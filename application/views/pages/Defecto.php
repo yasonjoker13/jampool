@@ -14,7 +14,7 @@
                                         <th>Comision</th>
                                         <th>Minutos para anular</th>
                                         <th>Estatus</th>
-                                        <!--<th>Acción</th>-->
+                                        <th>Acción</th>
                                     </tr>
                                 </thead>
 
@@ -36,9 +36,9 @@
 	                                                 </div>
 	                                            </div>
 	                                        </td>
-	                                        <!--<td>
-	                                            <i class="material-icons"> </i>
-	                                        </td>-->
+	                                        <td>
+	                                            <?= anchor('configuracion/editar/'.$config->id_configuracion, '<button type="button" class="btn btn-default waves-effect"><i class="material-icons">menu</i><span>Editar</span></button>'); ?>
+	                                        </td>
 	                                    </tr>
                                 	<?php endforeach; ?>
                                 </tbody>

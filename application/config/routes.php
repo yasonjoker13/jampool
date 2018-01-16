@@ -67,3 +67,4 @@ $route['register'] = 'user_session/sign_up';
 $route['recover'] = 'user_session/forgot_password';
 $route['ventas/detalles-ticket/(:num)'] = 'ventas/ticket_detalles/$1';
 $route['configuracion/agregar-usuario'] = 'configuracion/agg_user';
+$route['configuracion/editar-user/(:any)'] = 'configuracion/edit_user/$1';

@@ -16,7 +16,7 @@
                                         <th>Rol</th>
                                         <th>Ticketera</th>
                                         <th>Estatus</th>
-                                        <!--<th>Acción</th>-->
+                                        <th>Acción</th>
                                     </tr>
                                 </thead>
                                 <tbody class="align-center">
@@ -46,9 +46,9 @@
 	                                                 </div>
 	                                            </div>
 	                                        </td>
-	                                        <!--<td>
-	                                            <?php // anchor('configuracion/users/'.$usuario->username, '<button type="button" class="btn btn-default waves-effect"><i class="material-icons">menu</i><span>Editar</span></button>'); ?>
-	                                        </td>-->
+	                                        <td>
+	                                            <?= anchor('configuracion/editar-user/'.$usuario->username, '<button type="button" class="btn btn-default waves-effect"><i class="material-icons">menu</i><span>Editar</span></button>'); ?>
+	                                        </td>
 	                                    </tr>
                                 	<?php endforeach; ?>
                                 </tbody>

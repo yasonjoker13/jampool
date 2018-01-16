@@ -69,7 +69,7 @@
                     <!--<li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>-->
                     <!-- #END# Call Search -->
                     <!-- Calculator -->
-                    <li><a href="javascript:void(0);" class="calculator" data-toggle="modal" data-target="#calculator"><i class="material-icons">pan_tool</i></a></li>
+                    <li><a href="javascript:void(0);" class="calculator" data-toggle="modal" data-target="#calculator"><i class="material-icons">iso</i></a></li>
                     <!-- #END# Calculator -->
                     <?php $priv = $this->Session_model->priv_user(); ?>
                     <!-- Notifications -->

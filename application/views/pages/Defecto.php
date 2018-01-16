@@ -37,7 +37,7 @@
 	                                            </div>
 	                                        </td>
 	                                        <td>
-	                                            <?= anchor('configuracion/editar/'.$config->id_configuracion, '<button type="button" class="btn btn-default waves-effect"><i class="material-icons">menu</i><span>Editar</span></button>'); ?>
+	                                            <?= anchor('configuracion/editar/'.$config->id_configuracion, '<button type="button" class="btn btn-default waves-effect"><i class="material-icons">edit</i><span>Editar</span></button>'); ?>
 	                                        </td>
 	                                    </tr>
                                 	<?php endforeach; ?>

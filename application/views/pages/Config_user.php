@@ -47,7 +47,7 @@
 	                                            </div>
 	                                        </td>
 	                                        <td>
-	                                            <?= anchor('configuracion/editar-user/'.$usuario->username, '<button type="button" class="btn btn-default waves-effect"><i class="material-icons">menu</i><span>Editar</span></button>'); ?>
+	                                            <?= anchor('configuracion/editar-user/'.$usuario->username, '<button type="button" class="btn btn-default waves-effect"><i class="material-icons">edit</i><span>Editar</span></button>'); ?>
 	                                        </td>
 	                                    </tr>
                                 	<?php endforeach; ?>

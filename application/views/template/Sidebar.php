@@ -43,7 +43,7 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <?= anchor('ventas/reportes', '<i class="material-icons">add_circle_outline</i><span>Reportes</span>'); ?>
+                                <?= anchor('ventas/reportes', '<i class="material-icons">content_copy</i><span>Reportes</span>'); ?>
                             </li>
                             <li>
                                 <?= anchor('ventas/ticket', '<i class="material-icons">receipt</i><span>Ticket</span>'); ?>
@@ -60,7 +60,7 @@
                 <?php if($priv->rol == 1): ?>
                     <li <?php if($uri == 'registros'){ echo 'class="active"'; } ?>>
                         <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">attach_money</i>
+                            <i class="material-icons">assignment_returned</i>
                             <span>REGISTROS</span>
                         </a>
                         <ul class="ml-menu">

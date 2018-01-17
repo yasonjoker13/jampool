@@ -150,6 +150,14 @@ class Ventas extends CI_Controller {
 		$printer -> close();
 	}
 
+	public function imprimir_2($numero)
+	{
+		$data['ticket'] 	= $this->Ventas_model->getDetailsTicket($numero);
+		$data['horas']		= $this->Ventas_model->getHorasTicket($numero);
+		$data['jugadas']	= $this->Ventas_model->getJugadasTicket($numero);
+		$this->load->view('pages/imprimir', $data);
+	}
+
 	public function ticket()
 	{
 		//Config del CSS y JS

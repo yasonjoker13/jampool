@@ -112,6 +112,7 @@
                             </table>
 
                             <div class="align-center">
+                                <?= anchor('ventas/imprimir_2/'.$ticket->numero, 'Imprimir', ['target' => '_BLANK']); ?>
                                 <?php //echo anchor('ventas/emitir/'.$ticket->numero, '<button type="button" class="btn bg-cyan waves-effect" data-type="success">Emitir</button>'); ?>
                             </div>
                         </div>

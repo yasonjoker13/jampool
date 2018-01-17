@@ -13,7 +13,9 @@
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
-                            <li><a href="javascript:void(0);"><i class="material-icons">person</i>Perfil</a></li>
+                            <li>
+                                <?= anchor('perfil', '<i class="material-icons">person</i>Perfil'); ?>
+                            </li>
                             <li role="seperator" class="divider"></li>
                             <li>
                                 <?= anchor('user_session/logout', '<i class="material-icons">input</i>Salir'); ?>
@@ -32,7 +34,7 @@
             <div class="menu">
                 <ul class="list">
 
-                    <li <?php if($uri == ''){ echo 'class="active"'; } ?>>
+                    <li <?php if($uri == '' || $uri == 'perfil'){ echo 'class="active"'; } ?>>
                         <?= anchor('', '<i class="material-icons">home</i><span>INICIO</span>') ?>
                     </li>
             

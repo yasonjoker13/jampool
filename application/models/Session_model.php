@@ -113,4 +113,53 @@ class Session_model extends CI_Model
 		return $query->row();
 	}
 
+	public function getUser($username)
+	{
+		$this->db->where('username', $username);
+		$query = $this->db->get('usuarios');
+		return $query->row();
+	}
+
+	public function check_edit_ident($identificacion, $id_usuario)
+	{
+		$this->db->where('id_usuario !=', $id_usuario);
+		$this->db->where('identificacion', $identificacion);
+		$query = $this->db->get('usuarios');
+		if($query->num_rows() > 0){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	}
+
+	public function check_edit_email($email, $id_usuario)
+	{
+		$this->db->where('id_usuario !=', $id_usuario);
+		$this->db->where('email', $email);
+		$query = $this->db->get('usuarios');
+		if($query->num_rows() > 0){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	}
+
+	public function check_edit_user($username, $id_usuario)
+	{
+		$this->db->where('id_usuario !=', $id_usuario);
+		$this->db->where('username', $username);
+		$query = $this->db->get('usuarios');
+		if($query->num_rows() > 0){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+	}
+
+	public function updateUser($id_usuario, $data)
+	{
+		$this->db->where('id_usuario', $id_usuario);
+		$this->db->update('usuarios', $data);
+	}
+
 }
